@@ -1,0 +1,28 @@
+{
+  "git.ignoreLimitWarning": true,
+  "postman.settings.dotenv-detection-notification-visibility": false,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "postgresql",
+      "database": "postgres",
+      "username": "12345678"
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "postgres",
+      "database": "postgres",
+      "username": "postgres"
+    }
+  ],
+  "githubPullRequests.ignoredPullRequestBranches": [
+    "main"
+  ]
+}
