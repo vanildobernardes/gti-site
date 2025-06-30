@@ -1,4 +1,3 @@
-// ... imports
 import express from "express";
 import cors from "cors";
 import clientRoutes from "./routes/clientRoute.js";
