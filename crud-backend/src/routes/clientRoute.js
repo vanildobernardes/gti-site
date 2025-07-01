@@ -1,33 +1,32 @@
+// src/routes/clientRoute.js
 import express from "express";
 import * as clientController from "../controllers/clientController.js";
+import { protect } from "../middleware/authMiddleware.js"; // Importe o middleware de proteção
 
 const router = express.Router();
 
-/* ROTA DE CADASTRO APARELHO */
+/* ROTAS DE APARELHO (AGORA PROTEGIDAS) */
+// A ordem da rota de busca é importante: coloque-a antes da rota com :id_aparelho
+router.get("/aparelho/search", protect, clientController.searchAparelhos); // Protegida
+router.get("/aparelho", protect, clientController.getAparelho);           // Protegida
+router.post("/aparelho", protect, clientController.createAparelho);       // Protegida
+router.put("/aparelho/:id_aparelho", protect, clientController.updateAparelho); // Protegida
+router.delete("/aparelho/:id_aparelho", protect, clientController.deleteAparelho); // Protegida
 
-// Rotas de busca devem vir antes de rotas com parâmetros de ID para evitar conflitos
-router.get("/aparelho/search", clientController.searchAparelhos); // Sem '?' no path
-
-router.get("/aparelho", clientController.getAparelho);
-router.post("/aparelho", clientController.createAparelho);
-router.put("/aparelho/:id_aparelho", clientController.updateAparelho);
-router.delete("/aparelho/:id_aparelho", clientController.deleteAparelho);
-
-
-/* ROTA DE CADASTRO PROFISSIONAIS*/
-
-// Rotas de busca devem vir antes de rotas com parâmetros de ID
-router.get("/profissional/search", clientController.searchProfissional);
-
-router.get("/profissional", clientController.getProfissional);
-router.post("/profissional", clientController.createProfissional);
+/* ROTAS DE PROFISSIONAIS (AGORA PROTEGIDAS)*/
+// A ordem da rota de busca é importante: coloque-a antes da rota com :id_profissional
+router.get("/profissional/search", protect, clientController.searchProfissional); // Protegida
+router.get("/profissional", protect, clientController.getProfissional);           // Protegida
+router.post("/profissional", protect, clientController.createProfissional);       // Protegida
 router.put(
   "/profissional/:id_profissional",
+  protect,
   clientController.updateProfissional
-);
+); // Protegida
 router.delete(
   "/profissional/:id_profissional",
+  protect,
   clientController.deleteProfissional
-);
+); // Protegida
 
 export default router;

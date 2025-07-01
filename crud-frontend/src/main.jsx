@@ -1,12 +1,14 @@
+// src/main.jsx
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom"; // Importe BrowserRouter
 import "./index.css";
 import App from "./App.jsx";
-import Profissionais from "./componentes/Profissionais.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-    <Profissionais />
+    <BrowserRouter> {/* Adicione o BrowserRouter aqui */}
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
