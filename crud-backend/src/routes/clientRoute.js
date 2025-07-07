@@ -8,6 +8,7 @@ const router = express.Router();
 /* ROTAS DE APARELHO (AGORA PROTEGIDAS) */
 // A ordem da rota de busca é importante: coloque-a antes da rota com :id_aparelho
 router.get("/aparelho/search", protect, clientController.searchAparelhos); // Protegida
+router.get("/aparelho/options", protect, clientController.getDistinctAparelhoOptions); // Nova rota para opções de aparelho
 router.get("/aparelho", protect, clientController.getAparelho);           // Protegida
 router.post("/aparelho", protect, clientController.createAparelho);       // Protegida
 router.put("/aparelho/:id_aparelho", protect, clientController.updateAparelho); // Protegida

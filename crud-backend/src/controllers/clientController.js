@@ -69,6 +69,17 @@ export const searchAparelhos = async (req, res) => {
   }
 };
 
+// Novo controlador para buscar opções distintas de tipo e modelo de aparelho
+export const getDistinctAparelhoOptions = async (req, res) => {
+  try {
+    const options = await clientService.getDistinctAparelhoTypesAndModels();
+    res.status(200).json(options);
+  } catch (err) {
+    handleError(res, err);
+  }
+};
+
+
 /**CONTROLES DE PROFISSIONAIS */
 
 export const getProfissional = async (req, res) => {

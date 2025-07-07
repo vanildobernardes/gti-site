@@ -5,6 +5,7 @@ export default function Navbar({ isAuthenticated, onLogout }) {
   // As props onSearch e onOpen foram removidas, pois a busca e o modal
   // serão gerenciados diretamente dentro de AparelhosPage.jsx
 
+  
   return (
     <>
       <div className="navbar bg-base-100 shadow-sm">

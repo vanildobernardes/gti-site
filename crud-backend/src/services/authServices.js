@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import "dotenv/config"; // Para carregar variáveis de ambiente
 
-const JWT_SECRET = process.env.JWT_SECRET || "sua_chave_secreta_muito_forte"; // Use a mesma chave do .env
+const JWT_SECRET = process.env.JWT_SECRET || "OKjVIuGrXIAwZE16UUpdpiqVgoz9fyIxbqTrmEUSDTVMGgTo9gpzEHuH9R7x07Wi"; // Use a mesma chave do .env
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "1h"; // Tempo de expiração do token
 
 // Função auxiliar para tratamento de erros em serviços

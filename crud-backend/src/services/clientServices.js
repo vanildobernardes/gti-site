@@ -120,6 +120,21 @@ export const searchAparelhos = async (searchTerm) => {
   }
 };
 
+// Nova função para buscar tipos e modelos distintos
+export const getDistinctAparelhoTypesAndModels = async () => {
+  try {
+    const { rows } = await query(
+      `SELECT DISTINCT tipo_aparelho, modelo_aparelho FROM estoque.aparelho ORDER BY tipo_aparelho, modelo_aparelho;`
+    );
+    return rows;
+  } catch (error) {
+    throwServiceError(
+      "Falha ao buscar tipos e modelos distintos de aparelhos no banco de dados.",
+      error
+    );
+  }
+};
+
 export const searchProfissionais = async (searchTerm) => { // Nome consistente
   try {
     const { rows } = await query(
